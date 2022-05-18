@@ -4,6 +4,14 @@ Micro serviço de assinaturas da Codeflix
 
 ## Instalação e execução
 
+### Permissão de acesso
+
+Caso necessário, dê as seguintes permisssões:
+
+```bash
+chmod +x .docker/entrypoint.sh
+```
+
 ### Criar o projeto django
 
 ```bash
