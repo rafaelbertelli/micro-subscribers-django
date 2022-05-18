@@ -58,3 +58,11 @@ python manage.py createsuperuser
 ```bash
 django-admin startapp <nome_da_app>
 ```
+
+## Sync de versão de pacotes
+
+Ao instalar um novo pacote via `PIP`, executar o comando a baixo para atualizar a lista de pacotes dentro do `requirements.txt`
+
+```bash
+pip freeze > requirements.txt
+```
