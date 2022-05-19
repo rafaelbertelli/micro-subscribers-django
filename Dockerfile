@@ -1,20 +1,19 @@
-# syntax=docker/dockerfile:1
+FROM python:3.9.7-alpine3.14
 
-FROM python:3.10-alpine
-
-RUN apk add bash
-RUN adduser --disabled-password --uid 1000 python
-
-USER python
-
-RUN mkdir /home/python/app
-
-ENV MY_VENV_PATH=/home/python/app/venv
-ENV PIP_TARGET=${MY_VENV_PATH}
-ENV PYTHONPATH=${MY_VENV_PATH}
-ENV PATH=$PATH:${MY_VENV_PATH}/bin
+ENV PIPENV_VENV_IN_PROJECT=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONFAULTHANDLER=1
 ENV PYTHONUNBUFFERED=1
+
+ENV MY_VENV=/home/python/app/.venv
+ENV PATH=$PATH:${MY_VENV}/bin
+
+RUN apk add bash
+RUN pip install pipenv
+
+RUN adduser --disabled-password --uid 1000 python
+USER python
+
+RUN echo "source /home/python/app/.venv/bin/activate" >> /home/python/.bashrc     # remote container
 
 WORKDIR /home/python/app
