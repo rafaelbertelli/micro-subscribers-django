@@ -56,3 +56,12 @@ python manage.py createsuperuser
 ```bash
 django-admin startapp <nome_do_modulo>
 ```
+
+## Gerenciador de pacotes python
+
+Aqui na branch `main`, estamos usando o `POETRY` como gerenciador de pacotes. No entanto, também será possível utilizar o `PIPENV` mudando para a branch `container-with-poetry`
+
+| Gerenciador de pacotes | Branch                          |
+| ---------------------- | ------------------------------- |
+| POETRY                 | **main**, container-with-poetry |
+| PIPENV                 | container-with-pipenv           |
