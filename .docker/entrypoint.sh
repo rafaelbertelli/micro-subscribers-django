@@ -2,9 +2,8 @@
 
 # tail -f /dev/null
 
-poetry install
+pdm install
 
-source /home/python/app/.venv/bin/activate
-pip install --upgrade pip
+eval "$(pdm --pep582)"
 
 python manage.py runserver 0.0.0.0:8000

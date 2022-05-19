@@ -59,9 +59,10 @@ django-admin startapp <nome_do_modulo>
 
 ## Gerenciador de pacotes python
 
-Aqui na branch `main`, estamos usando o `POETRY` como gerenciador de pacotes. No entanto, também será possível utilizar o `PIPENV` mudando para a branch `container-with-poetry`
+Aqui na branch `main`, estamos usando o `PDM` como gerenciador de pacotes. No entanto, também é possível utilizar o `POETRY` ou `PIPENV` mudando para a respectiva branch
 
-| Gerenciador de pacotes | Branch                          |
-| ---------------------- | ------------------------------- |
-| POETRY                 | **main**, container-with-poetry |
-| PIPENV                 | container-with-pipenv           |
+| Gerenciador de pacotes | Branch                       |
+| ---------------------- | ---------------------------- |
+| PDM                    | **main**, container-with-pdm |
+| POETRY                 | container-with-poetry        |
+| PIPENV                 | container-with-pipenv        |
