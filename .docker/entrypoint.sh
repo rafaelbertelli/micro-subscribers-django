@@ -1,6 +1,8 @@
 #!/bin/bash
 
-pipenv install
+# tail -f /dev/null
+
+poetry install
 
 source /home/python/app/.venv/bin/activate
 pip install --upgrade pip

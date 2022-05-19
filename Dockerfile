@@ -1,6 +1,5 @@
-FROM python:3.9.7-alpine3.14
+FROM python:3.9.7-slim
 
-ENV PIPENV_VENV_IN_PROJECT=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONFAULTHANDLER=1
 ENV PYTHONUNBUFFERED=1
@@ -8,10 +7,10 @@ ENV PYTHONUNBUFFERED=1
 ENV MY_VENV=/home/python/app/.venv
 ENV PATH=$PATH:${MY_VENV}/bin
 
-RUN apk add bash
-RUN pip install pipenv
+RUN apt update && apt install -y --no-install-recommends gcc
+RUN pip install poetry
 
-RUN adduser --disabled-password --uid 1000 python
+RUN useradd -ms /bin/bash python
 USER python
 
 RUN echo "source /home/python/app/.venv/bin/activate" >> /home/python/.bashrc     # remote container
