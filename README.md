@@ -1,4 +1,4 @@
-# MICRO-SUBSCRIBE
+# MICRO-SUBSCRIBERS
 
 Micro serviço de assinaturas da Codeflix
 
