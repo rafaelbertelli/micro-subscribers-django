@@ -4,14 +4,6 @@ Micro serviço de assinaturas da Codeflix
 
 ## Instalação e execução
 
-### Permissão de acesso
-
-Caso necessário, dê as seguintes permisssões:
-
-```bash
-chmod +x .docker/entrypoint.sh
-```
-
 ### Criar o projeto django
 
 ```bash
@@ -19,6 +11,12 @@ docker-compose run app django-admin startproject micro_subscribers .
 ```
 
 Referência: [Django com Docker](https://docs.docker.com/samples/django/)
+
+Caso necessário, dê as seguintes permisssões:
+
+```bash
+chmod +x .docker/entrypoint.sh
+```
 
 ### Subir o projeto com docker
 
@@ -53,16 +51,8 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### Criar novo módulo
+### Criar um novo módulo
 
 ```bash
-django-admin startapp <nome_da_app>
-```
-
-## Sync de versão de pacotes
-
-Ao instalar um novo pacote via `PIP`, executar o comando a baixo para atualizar a lista de pacotes dentro do `requirements.txt`
-
-```bash
-pip freeze > requirements.txt
+django-admin startapp <nome_do_modulo>
 ```
